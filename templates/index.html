@@ -8,9 +8,14 @@
     <title>What's the weather like?</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
     <link href="{% static 'css/delete.css' %}" rel="stylesheet">
+    <style>
+    body{
+        background: #b3ff00;
+    }
+    </style>
 </head>
 <body>
-    <section class="hero is-primary">
+    <section class="hero is-success">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
@@ -56,10 +61,11 @@
                             <div class="media-content">
                                 <div class="content">
                                     <p>
-                                        <span class="title">{{weather.city}}</span>
+                                        <span class="title">{{weather.city}},{{weather.country}}</span>
                                         <br>
-                                        <span class="subtitle">{{weather.temp}}</span>
+                                        <span class="subtitle">{{weather.temp}}° F</span>
                                         <br> {{weather.description}}
+                                        <br> Humidity Of {{weather.humidity}}g/kg
                                     </p>
                                 </div>
                             </div>

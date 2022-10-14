@@ -31,7 +31,9 @@ def index(request):
             'city': city,
             'description': x['weather'][0]['description'],
             'temp': x['main']['temp'],
-            'icon': x['weather'][0]['icon']
+            'icon': x['weather'][0]['icon'],
+            'humidity': x['main']['humidity'],
+            'country': x['sys']['country'],
         }
 
         weather_list.append(weather)
@@ -43,6 +45,6 @@ def index(request):
 
 
 def deletecity(request, name):
-    city = City.objects.get(name=name)
+    city = City.objects.filter(name=name)
     city.delete();
     return redirect('/')
