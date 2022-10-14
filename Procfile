@@ -1,1 +1,1 @@
-web gunicorn Weatherproject.wsgi:application --log-file -
+web gunicorn WeatherProject.wsgi:application --log-file -
