@@ -30,7 +30,7 @@ def index(request):
         weather = {
             'city': city,
             'description': x['weather'][0]['description'],
-            'temp': x['main']['temp'],
+            'temp': (((x['main']['temp']) - 32)*5)/9,
             'icon': x['weather'][0]['icon'],
             'humidity': x['main']['humidity'],
             'country': x['sys']['country'],
